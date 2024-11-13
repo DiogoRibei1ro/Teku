@@ -1,0 +1,16 @@
+<div>
+    <h1>Conversor de Moedas</h1>
+    <input type="number" [(ngModel)]="valor" placeholder="Valor" />
+    
+    <select [(ngModel)]="moedaDe" (change)="obterMoedas()">
+      <option *ngFor="let moeda of moedas | keyvalue" [value]="moeda.key">{{moeda.key}}</option>
+    </select>
+  
+    <select [(ngModel)]="moedaPara">
+      <option *ngFor="let moeda of moedas | keyvalue" [value]="moeda.key">{{moeda.key}}</option>
+    </select>
+  
+    <button (click)="converter()">Converter</button>
+  
+    <h2>Resultado: {{resultado | number:'1.2-2'}} {{moedaPara}}</h2>
+  </div>
